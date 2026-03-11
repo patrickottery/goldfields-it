@@ -402,7 +402,7 @@ h1 span { color: var(--accent); }
   letter-spacing: -0.035em;
   margin-top: 12px;
 }
-.page-hero p { color: var(--muted); margin-top: 16px; font-size: 1rem; max-width: 480px; line-height: 1.75; }
+.page-hero p { color: var(--muted); margin-top: 16px; font-size: 1rem; max-width: 680px; line-height: 1.75; }
 
 .services-block { margin-bottom: 72px; }
 .services-block-head {
