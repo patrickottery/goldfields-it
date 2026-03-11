@@ -441,7 +441,7 @@ h1 span { color: var(--accent); }
   padding: 28px 26px;
   transition: border-color 0.2s, transform 0.2s;
 }
-.svc-card:hover { border-color: rgba(200, 146, 31, 0.25); transform: translateY(-2px); }
+.svc-card:hover { transform: translateY(-2px); }
 .svc-icon {
   width: 40px;
   height: 40px;
@@ -507,35 +507,9 @@ h1 span { color: var(--accent); }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: fixed;
-    inset: var(--nav-h) 0 0 0;
-    background: var(--bg);
-    flex-direction: column;
-    padding: 36px 28px;
-    gap: 0;
-    border-top: 1px solid var(--border);
-    overflow-y: auto;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { width: 100%; }
-  .nav-links a {
-    display: block;
-    padding: 16px 0;
-    font-size: 1.05rem;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-cta {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    padding: 14px !important;
-    border-radius: 10px !important;
-    border-bottom: none !important;
-  }
-  .nav-toggle { display: flex; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.8rem; }
+  .nav-cta { padding: 7px 14px; font-size: 0.8rem !important; }
   .hero-inner { padding: 72px 0; }
   .section { padding: 72px 0; }
   .about-aside { grid-template-columns: 1fr 1fr; }
