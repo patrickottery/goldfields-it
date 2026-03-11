@@ -495,6 +495,116 @@ h1 span { color: var(--accent); }
 .map-wrap { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); margin-top: 32px; }
 .map-wrap iframe { display: block; }
 
+/* ── Service Detail Pages ── */
+.breadcrumb { padding: 24px 0 0; }
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.825rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.svc-detail-hero { padding: 48px 0 64px; }
+.category-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(200, 146, 31, 0.12);
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.svc-detail-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 18px; }
+.svc-detail-hero p { color: var(--muted); font-size: 1rem; line-height: 1.75; max-width: 600px; }
+
+.svc-detail-body { padding: 0 0 108px; }
+.svc-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 64px;
+  align-items: start;
+}
+.svc-detail-main h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+.svc-detail-main h2 + h2 { margin-top: 36px; }
+.svc-detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.svc-detail-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.svc-detail-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.svc-detail-note {
+  background: rgba(200, 146, 31, 0.06);
+  border: 1px solid rgba(200, 146, 31, 0.15);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.svc-detail-aside { position: sticky; top: calc(var(--nav-h) + 28px); }
+.svc-cta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+}
+.svc-cta-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.svc-cta-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 22px; }
+.svc-cta-card .btn { width: 100%; justify-content: center; }
+.svc-contact-list { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+.svc-contact-list li { font-size: 0.825rem; color: var(--muted); }
+.svc-contact-list a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.svc-contact-list a:hover { color: var(--accent); }
+
+/* Learn more link on service cards */
+.svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.775rem;
+  font-weight: 600;
+  margin-top: 14px;
+  transition: gap 0.2s;
+}
+.svc-link:hover { gap: 9px; }
+.svc-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .about-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -504,6 +614,8 @@ h1 span { color: var(--accent); }
 @media (max-width: 900px) {
   .category-grid { grid-template-columns: 1fr; gap: 16px; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .svc-detail-grid { grid-template-columns: 1fr; }
+  .svc-detail-aside { position: static; }
 }
 
 @media (max-width: 768px) {
