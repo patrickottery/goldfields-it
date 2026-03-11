@@ -259,12 +259,56 @@ h1 span { color: var(--accent); }
 }
 .cat-link:hover { gap: 9px; }
 
+/* ── Filter bar (services) ── */
+.filter-bar-wrap {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 100;
+  background: rgba(8, 9, 15, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.filter-bar {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.filter-btn {
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+.filter-btn:hover { color: var(--text); }
+.filter-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
 /* ── About (homepage) ── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 380px 1fr;
   gap: 80px;
   align-items: center;
+}
+.about-photo-wrap { flex-shrink: 0; }
+.about-photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 .about-text h2 {
   font-size: clamp(1.75rem, 3vw, 2.4rem);
@@ -305,21 +349,6 @@ h1 span { color: var(--accent); }
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.aside-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-}
-.aside-card strong {
-  display: block;
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--accent);
-  letter-spacing: -0.03em;
-  margin-bottom: 6px;
-}
-.aside-card span { font-size: 0.8rem; color: var(--muted); line-height: 1.5; display: block; }
 
 /* ── CTA banner ── */
 .cta-banner {
@@ -467,9 +496,13 @@ h1 span { color: var(--accent); }
 .map-wrap iframe { display: block; }
 
 /* ── Responsive ── */
+@media (max-width: 960px) {
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .about-photo { max-width: 340px; }
+}
+
 @media (max-width: 900px) {
   .category-grid { grid-template-columns: 1fr; gap: 16px; }
-  .about-grid { grid-template-columns: 1fr; gap: 52px; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 

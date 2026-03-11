@@ -21,3 +21,19 @@ if (toggle && links) {
 
 // Footer year
 document.querySelectorAll('#yr').forEach(el => el.textContent = new Date().getFullYear());
+
+// Services filter
+const filterBtns = document.querySelectorAll('[data-filter]');
+if (filterBtns.length) {
+  const blocks = document.querySelectorAll('.services-block');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.dataset.filter;
+      blocks.forEach(block => {
+        block.style.display = (target === 'all' || block.id === target) ? '' : 'none';
+      });
+    });
+  });
+}
