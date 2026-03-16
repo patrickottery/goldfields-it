@@ -59,6 +59,7 @@ body {
 .logo {
   font-weight: 800;
   font-size: 1.05rem;
+  white-space: nowrap;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -528,10 +529,33 @@ h1 span { color: var(--accent); }
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 0.8rem; }
   .nav-cta { padding: 7px 14px; font-size: 0.8rem !important; }
+  .hero { min-height: auto; }
   .hero-inner { padding: 72px 0; }
   .section { padding: 72px 0; }
   .about-aside { grid-template-columns: 1fr 1fr; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(8, 9, 15, 0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px 24px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { font-size: 1rem; padding: 12px 0; display: block; border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child a { border-bottom: none; }
+  .nav-cta { margin-top: 8px; text-align: center; }
 }
 
 @media (max-width: 480px) {
