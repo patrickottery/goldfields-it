@@ -301,13 +301,13 @@ h1 span { color: var(--accent); }
   gap: 80px;
   align-items: center;
 }
-.about-photo-wrap { flex-shrink: 0; }
+.about-photo-wrap { flex-shrink: 0; overflow: hidden; border-radius: var(--radius); aspect-ratio: 400 / 375; }
 .about-photo {
   width: 100%;
-  height: auto;
-  border-radius: var(--radius);
+  height: 100%;
   display: block;
   object-fit: cover;
+  object-position: top;
   border: 1px solid var(--border);
 }
 .about-text h2 {
